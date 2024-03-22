@@ -10,7 +10,7 @@ Customizable: You can easily add new tasks or functionalities to the chatbot.
 To use the Speech Recognition Chatbot, follow these steps:
 
 1. Installation: Clone this repository to your local machine.
-   Simply copy -
+                      Simply copy -
    git clone https://github.com/itsAditya0512/MarQ-Chatbot.git
 2. Dependencies: Install the required dependencies. You may need to install additional dependencies based on your system configuration.
 3. Run the main.py
