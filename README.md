@@ -22,7 +22,7 @@ Special thanks to anyone who contributes to improving this chatbot. Your efforts
 # Steps to install
  ### Step 1: Install required system packages
    Open Termial and run:
-     sudo apt update
+     sudo apt update & 
      sudo apt install python3-venv python3-dev portaudio19-dev
 
  ### Step 2: Create a virtual environment:
