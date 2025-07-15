@@ -8,6 +8,7 @@ import random  # For random selection
 import platform  # For detecting the operating system
 
 # Initialize text-to-speech engine
+<<<<<<< HEAD
 def initialize_engine():
     # Determine the operating system and select the appropriate TTS driver
     system_platform = platform.system()
@@ -26,6 +27,11 @@ def initialize_engine():
         exit("Text-to-speech initialization failed. Ensure dependencies are installed.")
 
 engine = initialize_engine()
+=======
+engine = pyttsx3.init()
+voices = engine.getProperty('voices')
+engine.setProperty('voice', voices[0].id)
+>>>>>>> 0dbf354 (	modified:   main.py)
 
 # Function to speak the given text
 def speak(text):
@@ -67,6 +73,7 @@ def listen():
 
 # Function to handle user commands
 def handle_command(command):
+<<<<<<< HEAD
     try:
         if 'wikipedia' in command:
             # Search Wikipedia for the query and return a summary
@@ -109,6 +116,30 @@ def handle_command(command):
         # Handle errors during command processing
         print(f"Error handling command: {e}")
         speak("An error occurred while processing your command.")
+=======
+    if 'wikipedia' in command:
+        speak('Searching Wikipedia...')
+        query = command.replace('wikipedia', '')
+        results = wikipedia.summary(query, sentences=2)
+        speak("According to Wikipedia")
+        print(results)
+        speak(results)
+    elif 'open youtube' in command:
+        webbrowser.open("https://www.youtube.com")
+    elif 'open google' in command:
+        webbrowser.open("https://www.google.com")
+    # elif 'play music' in command:
+    #     music_dir = 'd:/Music'  # Replace with your music directory
+    #     songs = os.listdir(music_dir)
+    #     random.shuffle(songs)
+    #     os.startfile(os.path.join(music_dir, songs[0]))
+    elif 'the time' in command:
+        current_time = datetime.datetime.now().strftime("%H:%M:%S")
+        speak(f"The current time is {current_time}")
+    elif('exit' in command and len(command)==4):
+        speak("Goodbye!")
+        exit()
+>>>>>>> 0dbf354 (	modified:   main.py)
 
 # Main program loop
 def main():
